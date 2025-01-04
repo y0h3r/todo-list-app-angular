@@ -1,0 +1,14 @@
+{
+  "landing_title": "Enter your email to view your pending tasks",
+  "verify": "Verify",
+  "invalid_email": "Please enter a valid email address",
+  "email_is": "Email is",
+  "required": "required",
+  "todo_list_title": "Here is your to-do list",
+  "description_is": "Description is",
+  "task_title": "Task title",
+  "task_description": "Task description",
+  "create": "Create",
+  "update": "Update",
+  "clear": "Clear"
+}

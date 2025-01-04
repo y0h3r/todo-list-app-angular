@@ -1,59 +1,145 @@
-# AtomTodoApp
+Here’s the **README.md** file, updated without the license section and tailored for your **Todo Application**:
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+---
 
-## Development server
+# **Todo Application**
 
-To start a local development server, run:
+A simple, standalone Angular application for managing tasks. This application is built with Angular's modern standalone components and NgRx for state management. It includes features like task creation, updates, and deletion, with persistent state management and multi-language support using ngx-translate.
 
-```bash
-ng serve
+---
+
+## **Features**
+
+- **Task Management**: Add, edit, delete, and view tasks.
+- **Responsive Design**: Mobile-first design with Angular Material components.
+- **State Management**: Uses NgRx for predictable and centralized state management.
+- **Multi-Language Support**: Integrated with `ngx-translate` for internationalization.
+- **Modern Angular**: Built using Angular standalone components, following best practices.
+- **Persistent State**: Stores application state in localStorage to preserve tasks across sessions.
+
+---
+
+## **Getting Started**
+
+Follow these steps to set up and run the application locally.
+
+### **Prerequisites**
+
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [Angular CLI](https://angular.io/cli) (v16 or higher)
+
+### **Installation**
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/y0h3r/todo-list-app-angular.git
+   cd todo-list-app-angular
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the application:
+   ```bash
+   ng serve
+   ```
+
+4. Open your browser and navigate to:
+   ```
+   http://localhost:4200
+   ```
+
+---
+
+## **Usage**
+
+### **Home Page**
+The home page displays a list of all tasks. You can:
+- **Add a Task**: Enter a task description and click "Add Task".
+- **Edit a Task**: Click the edit icon next to a task to modify it.
+- **Delete a Task**: Click the delete icon next to a task to remove it.
+
+### **State Persistence**
+The application uses NgRx with localStorage to persist tasks between sessions.
+
+### **Multi-Language Support**
+Switch languages dynamically using the language dropdown (English and Spanish are available by default).
+
+---
+
+## **Project Structure**
+
+```
+src/
+├── app/
+│   ├── assets/             # Static assets such as images, styles, or translation files
+│   │   ├── i18n/           # JSON translation files for multi-language support
+│   ├── environments/       # Environment-specific configurations (e.g., dev, prod)
+│   ├── features/           # Feature-specific modules and components
+│   ├── shared/             # Shared utilities, components, directives, and pipes
+│   ├── app.component.*     # Root component files (HTML, SCSS, TS)
+│   ├── app.config.ts       # Configuration or constants for the app
+│   ├── app.routes.ts       # Application routing configuration
+├── index.html              # Entry point for the application
+├── main.ts                 # Bootstrap file for the Angular app
+├── styles.scss             # Global styles for the application
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## **State Management**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+The application uses NgRx to manage state:
 
-```bash
-ng generate component component-name
-```
+- **Actions**: Define user actions like `addTask`, `editTask`, and `deleteTask`.
+- **Reducer**: Handles state transitions based on actions.
+- **Selectors**: Fetch derived state like the list of completed tasks.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## **Internationalization (i18n)**
 
-## Building
+The app uses **ngx-translate** for multi-language support.
 
-To build the project run:
+### Adding a New Language
 
-```bash
-ng build
-```
+1. Add a new JSON file in `assets/i18n/`, e.g., `fr.json` for French.
+2. Update the `TranslateService` to include the new language.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## **Technology Stack**
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- **Angular**: Framework for building web applications.
+- **NgRx**: State management library for Angular.
+- **Angular Material**: UI components for Angular.
+- **ngx-translate**: Internationalization library for Angular.
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+## **Future Enhancements**
 
-For end-to-end (e2e) testing, run:
+- Add authentication for user-specific task management.
+- Integrate with a backend API for real-time updates.
+- Implement categories and task prioritization.
+- Add more language options.
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## **Contributing**
 
-## Additional Resources
+We welcome contributions! Please fork the repository and submit a pull request for review.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+## **Acknowledgments**
+
+- [Angular](https://angular.io/)
+- [NgRx](https://ngrx.io/)
+- [ngx-translate](https://github.com/ngx-translate/core)
+
+---
+
+This README provides a comprehensive overview of the application and its structure. Let me know if you’d like any additional modifications! 😊

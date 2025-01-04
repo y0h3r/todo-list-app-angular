@@ -1,0 +1,60 @@
+<ng-container *ngIf="isInitialized">
+  <mat-grid-list
+    appResponsiveGrid
+    [smallScreenCols]="1"
+    [mediumScreenCols]="4"
+    [largeScreenCols]="5"
+    cols="6"
+    rowHeight="200px"
+    gutterSize="10px"
+  >
+    <!-- offset -->
+    <mat-grid-tile 
+      appResponsiveTile
+      [smallScreenCols]="0"
+      [mediumScreenCols]="1"
+      [largeScreenCols]="1"
+      [colspan]="1"
+      [rowspan]="5"
+    >
+    </mat-grid-tile>
+    <!-- end of offset -->
+    <mat-grid-tile 
+      appResponsiveTile
+      [smallScreenCols]="1"
+      [mediumScreenCols]="2"
+      [largeScreenCols]="3"
+      [colspan]="2"
+      [rowspan]="1"
+    >
+    <h1 class="title">{{ 'landing_title' | translate }}</h1>
+    </mat-grid-tile>
+    <mat-grid-tile 
+      appResponsiveTile
+      [smallScreenCols]="1"
+      [mediumScreenCols]="2"
+      [largeScreenCols]="3"
+      [colspan]="2"
+      [rowspan]="1"
+    >
+      <mat-card appearance="outlined" class="fit-parent">
+        <form class="fit-parent form">
+          <mat-form-field class="fit-parent">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+            @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+              <mat-error>{{ 'invalid_email' | translate }}</mat-error>
+            }
+            @if (emailFormControl.hasError('required')) {
+              <mat-error>{{ 'email_is' | translate }} <strong>{{ 'required' | translate }}</strong></mat-error>
+            }
+          </mat-form-field>
+  
+          <div class="fit-parent button-container">
+            <button mat-flat-button (click)="onVerify()">{{ 'verify' | translate }}</button>
+          </div>
+        </form>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-container>

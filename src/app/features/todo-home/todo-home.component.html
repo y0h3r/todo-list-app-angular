@@ -1,0 +1,110 @@
+<ng-container *ngIf="isInitialized">
+  <mat-grid-list
+    appResponsiveGrid
+    [smallScreenCols]="1"
+    [mediumScreenCols]="4"
+    [largeScreenCols]="5"
+    cols="6"
+    rowHeight="100px"
+    gutterSize="10px"
+  >
+    <!-- offset -->
+    <mat-grid-tile 
+      appResponsiveTile
+      [smallScreenCols]="0"
+      [mediumScreenCols]="1"
+      [largeScreenCols]="1"
+      [colspan]="1"
+      [rowspan]="5"
+    >
+    </mat-grid-tile>
+    <!-- end of offset -->
+    <mat-grid-tile 
+      appResponsiveTile
+      [smallScreenCols]="1"
+      [mediumScreenCols]="2"
+      [largeScreenCols]="3"
+      [colspan]="2"
+      [rowspan]="1"
+    >
+    <h1 class="title">{{ 'todo_list_title' | translate }}</h1>
+    </mat-grid-tile>
+    <mat-grid-tile 
+      appResponsiveTile
+      [smallScreenCols]="1"
+      [mediumScreenCols]="2"
+      [largeScreenCols]="3"
+      [colspan]="2"
+      [rowspan]="3"
+    >
+    
+
+      <mat-card appearance="outlined" class="fit-parent">
+        <form class="fit-parent form">
+          <mat-form-field class="fit-parent">
+            <mat-label>{{ 'task_title' | translate }}</mat-label>
+            <input type="text" matInput [formControl]="titleFormControl" [errorStateMatcher]="matcher">
+            @if (titleFormControl.hasError('required')) {
+              <mat-error>{{ 'description_is' | translate }} <strong>{{ 'required' | translate }}</strong></mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field class="fit-parent">
+            <mat-label>{{ 'task_description' | translate }}</mat-label>
+            <input type="text" matInput [formControl]="descriptionFormControl" [errorStateMatcher]="matcher">
+          </mat-form-field>
+
+          <mat-form-field class="hide-form-control">
+            <mat-label>{{ 'task_description' | translate }}</mat-label>
+            <input type="text" matInput [formControl]="idFormControl" [errorStateMatcher]="matcher">
+          </mat-form-field>
+
+          <div class="fit-parent button-container">
+            @if (idFormControl.value === '') {
+              <button mat-flat-button (click)="handleCreateTodo()">{{ 'create' | translate }}</button>  
+            }
+            @if (idFormControl.value !== '') {
+              <button mat-flat-button (click)="handleUpdateTodo()">{{ 'update' | translate }}</button>  
+            }
+            <button mat-flat-button class="clear-button" (click)="handleClearTodoForm()">{{ 'clear' | translate }}</button>
+          </div>
+        </form>
+      </mat-card>
+    
+    
+    </mat-grid-tile>
+    <mat-grid-tile 
+      appResponsiveTile
+      [smallScreenCols]="1"
+      [mediumScreenCols]="2"
+      [largeScreenCols]="3"
+      [colspan]="2"
+      [rowspan]="4"
+      class="list"
+    >
+    
+    <div class="scrollable-list fit-parent">
+      <mat-list class="fit-parent list">
+        <mat-list-item *ngFor="let task of allUserTasks" class="list-item">
+          <div class="list-item-content">
+            <mat-checkbox [checked]="task.completed" (change)="handleToogleTask(task)"></mat-checkbox>
+            <div class="fit-parent parent-container ">
+              <div matListItemTitle>{{task.title}}</div>
+              <div matListItemLine class="ellipsis">{{task.description}}</div>
+            </div>
+            <div class="options">
+              <button mat-icon-button (click)="handleLoadTodoOnForm(task)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button (click)="handleDelete(task)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-container>

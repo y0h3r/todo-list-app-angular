@@ -1,0 +1,14 @@
+{
+  "landing_title": "Introduce tu correo para ver tus tareas pendientes",
+  "verify": "Verificar",
+  "invalid_email": "Por favor, introduce una dirección de correo electrónico válida",
+  "email_is": "El correo es",
+  "required": "requerido",
+  "todo_list_title": "Aqui tienes tu lista de tareas pendientes",
+  "description_is": "Descripción es",
+  "task_title": "Titulo de la tarea",
+  "task_description": "Descripción de la tarea",
+  "create": "Crear",
+  "update": "Actualizar",
+  "clear": "Limpiar"
+}
