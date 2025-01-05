@@ -1,6 +1,3 @@
-Here’s the **README.md** file, updated without the license section and tailored for your **Todo Application**:
-
----
 
 # **Todo Application**
 
