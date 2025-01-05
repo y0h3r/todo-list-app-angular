@@ -136,7 +136,3 @@ We welcome contributions! Please fork the repository and submit a pull request f
 - [Angular](https://angular.io/)
 - [NgRx](https://ngrx.io/)
 - [ngx-translate](https://github.com/ngx-translate/core)
-
----
-
-This README provides a comprehensive overview of the application and its structure. Let me know if you’d like any additional modifications! 😊
